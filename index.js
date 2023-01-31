@@ -4,9 +4,14 @@ const express = require('express');
 const db = require('./config/connection');
 //Import routes
 const routes = require('./routes');
+const cwd = process.cwd();
 
 const PORT = 3001; //Define port
 const app = express(); //Initialize app
+
+const activity = cwd.includes('RED-SOCIAL')
+  ? cwd.split('/RED-SOCIAL/')[1]
+  : cwd;
 
 //Configure app
 app.use(express.urlencoded({ extended: true }));
