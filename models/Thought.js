@@ -2,6 +2,8 @@
 const { Schema, model } = require('mongoose');
 //Import Reaction schema
 const Reaction = require('./Reaction');
+//Import dateformat
+const dateFormat = require('dateformat');
 
 //Create schema for thought model
 const thoughtSchema = new Schema(
@@ -17,10 +19,11 @@ const thoughtSchema = new Schema(
         default: Date.now,
         //Set getter to format date
         get: (date) => {
-            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            return dateFormat(new Date(date), "mmm dS, yyyy, h:MM TT");
+            /*const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             let month = months[new Date(date).getMonth()];
             return `${month} ${new Date(date).getDate()}th, ${new Date(date).getFullYear()} at 
-            ${new Date(date).getHours()}:${new Date(date).getMinutes()}`;
+            ${new Date(date).getHours()}:${new Date(date).getMinutes()}`;*/
         }
       },
       username: {
@@ -40,7 +43,7 @@ const thoughtSchema = new Schema(
   );
 
 //Create a virtual to get the number of reactions for the thought
-userSchema
+thoughtSchema
 .virtual('reactionCount')
 // Getter
 .get(function () {
