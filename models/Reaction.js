@@ -1,7 +1,7 @@
 //Import Schema and model from mongoose
 const { Schema, Types } = require('mongoose');
-//Import dateformat
-const dateFormat = require('dateformat');
+//Import helper to format date
+const  { format_date }  = require('../utils/helper');
 
 //Create Reaction schema
 const reactionSchema = new Schema(
@@ -24,11 +24,7 @@ const reactionSchema = new Schema(
         default: Date.now,
         //Set getter to format date
         get: (date) => {
-            return dateFormat(new Date(date), "mmm dS, yyyy, h:MM TT");
-            /*const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            let month = months[new Date(date).getMonth()];
-            return `${month} ${new Date(date).getDate()}th, ${new Date(date).getFullYear()} at 
-            ${new Date(date).getHours()}:${new Date(date).getMinutes()}`;*/
+            return format_date(date);
         }
       },
     },
