@@ -2,7 +2,7 @@
 const { connect, connection } = require('mongoose');
 
 //Configure connect
-connect('mongodb://localhost/developersApplications', {
+connect('mongodb://localhost/RedSocialDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
