@@ -1,4 +1,4 @@
-# Red-Social
+# Red Social
 
 ## Descripción de la aplicación  
 
@@ -15,12 +15,13 @@
     
 ## Estructura de la base de datos
 
- * La base de datos tiene el nombre de "RedSocialDB" y está conformada por 2 collecciones llamadas "thoughts" y "users".
+ * La base de datos tiene el nombre de "RedSocialDB" y está conformada por 2 colecciones llamadas "thoughts" y "users".
  * En total, se emplean 3 esquemas de base de datos: "userSchema", "thoughtSchema" y "reactionSchema". 
  * A partir de los dos primeros esquemas, se crean los modelos "User" y "Thought", respectivamente, mientras que el "reactionSchema" se mantiene como esquema de subdocumento del campo "reaction" en el esquema "thoughtSchema".
  * En la siguiente imagen se puede observar la configuración de los esquemas.  
     ![Esquemas de la base de datos](./images/Esquemas.JPG)  
- * Al ejecutar el comando "npm run seed" desde la terminal de node.js (estando en la carpeta principal/raíz), se pueden crear algunos documentos iniciales en las colecciones de la base de datos.
+ * Al ejecutar el comando "npm run seed" desde la terminal de node.js (estando en la carpeta principal/raíz), se pueden crear algunos documentos iniciales en las colecciones de la base de datos.  
+    ![Documentos iniciales](./images/DocumentosIniciales.JPG)
 
 ## Instrucciones de instalación  
 
