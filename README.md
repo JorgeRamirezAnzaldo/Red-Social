@@ -132,5 +132,5 @@
 
 ## Enlace a video de funcionalidad de la aplicación
 
-* [Link a video de aplicación]()
+* [Link a video de aplicación](https://drive.google.com/file/d/1ulwMeq94_J-SUGH560khD_6simztD0D7/view)
 
